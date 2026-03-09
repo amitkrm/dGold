@@ -1,0 +1,169 @@
+/* ===== Modules Section ===== */
+.modules {
+  background: var(--gradient-section-alt);
+  position: relative;
+}
+
+.modules__tabs {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+  margin-bottom: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.modules__tab {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.modules__tab.active {
+  background: var(--color-bg-tertiary);
+  color: var(--color-gold-light);
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.modules__tab:hover:not(.active) {
+  border-color: var(--color-text-tertiary);
+  color: var(--color-text-primary);
+}
+
+.modules__panel {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.modules__panel.active {
+  display: block;
+}
+
+.modules__detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+.modules__detail-info h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-4);
+}
+
+.modules__detail-info > p {
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-8);
+}
+
+.module-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.module-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-glass);
+  transition: all var(--transition-base);
+}
+
+.module-feature-item:hover {
+  border-color: var(--color-border-hover);
+  transform: translateX(4px);
+}
+
+.module-feature-item__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xl);
+  flex-shrink: 0;
+}
+
+.module-feature-item__text strong {
+  display: block;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.module-feature-item__text span {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-snug);
+}
+
+/* Module visual area */
+.modules__detail-visual {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  backdrop-filter: var(--glass-blur);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.module-visual-icon {
+  font-size: 4rem;
+  opacity: 0.8;
+  margin-bottom: var(--space-4);
+}
+
+.module-capabilities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.module-cap {
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.module-cap:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold-light);
+}
+
+/* Icon colors */
+.module--dq .module-feature-item__icon { background: rgba(16, 185, 129, 0.1); color: var(--color-green); }
+.module--mdm .module-feature-item__icon { background: rgba(59, 130, 246, 0.1); color: var(--color-blue-light); }
+.module--stewardship .module-feature-item__icon { background: rgba(212, 168, 67, 0.1); color: var(--color-gold); }
+.module--compliance .module-feature-item__icon { background: rgba(168, 85, 247, 0.1); color: var(--color-purple); }
+
+@media (max-width: 768px) {
+  .modules__detail { grid-template-columns: 1fr; }
+  .module-capabilities { grid-template-columns: 1fr; }
+}
