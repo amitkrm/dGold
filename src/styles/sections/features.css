@@ -1,93 +1,49 @@
-/* ===== Features Section – Easier · Faster · SimplifAIed ===== */
+/* ===== Features Section (Clerk Bento Box) ===== */
 .features {
-  background: var(--gradient-section);
+  background: var(--color-bg-primary);
   position: relative;
 }
 
 .features__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-8);
+  gap: var(--space-4); /* Tight gap for bento feel */
 }
 
 .feature-card {
-  background: var(--gradient-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-10);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: var(--glass-blur);
-  transition: all var(--transition-slow);
-}
-
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-  transition: opacity var(--transition-base);
-}
-
-.feature-card--easier::before { background: var(--gradient-gold); }
-.feature-card--faster::before { background: var(--gradient-blue); }
-.feature-card--simplifaied::before { background: linear-gradient(90deg, var(--color-purple), var(--color-cyan)); }
-
-.feature-card:hover {
-  transform: translateY(-8px);
-  border-color: transparent;
-  box-shadow: var(--shadow-xl);
-}
-
-.feature-card:hover::before {
-  opacity: 1;
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
 }
 
 .feature-card__icon {
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-md);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--text-2xl);
+  font-size: var(--text-lg);
   margin-bottom: var(--space-6);
-}
-
-.feature-card--easier .feature-card__icon {
-  background: rgba(212, 168, 67, 0.12);
-  color: var(--color-gold-light);
-}
-
-.feature-card--faster .feature-card__icon {
-  background: rgba(59, 130, 246, 0.12);
-  color: var(--color-blue-light);
-}
-
-.feature-card--simplifaied .feature-card__icon {
-  background: rgba(168, 85, 247, 0.12);
-  color: var(--color-purple);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
 }
 
 .feature-card__tag {
-  font-size: var(--text-xs);
-  font-weight: var(--weight-semibold);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-medium);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: var(--space-3);
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
 }
 
-.feature-card--easier .feature-card__tag { color: var(--color-gold); }
-.feature-card--faster .feature-card__tag { color: var(--color-blue-light); }
-.feature-card--simplifaied .feature-card__tag { color: var(--color-purple); }
-
 .feature-card__title {
-  font-family: var(--font-heading);
-  font-size: var(--text-2xl);
-  font-weight: var(--weight-bold);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.02em;
   margin-bottom: var(--space-4);
   color: var(--color-text-primary);
 }
@@ -96,27 +52,24 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  margin-top: auto;
 }
 
 .feature-card__list li {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-3);
-  font-size: var(--text-sm);
+  gap: var(--space-2);
+  font-size: 13px;
   color: var(--color-text-secondary);
-  line-height: var(--leading-relaxed);
+  line-height: var(--leading-normal);
 }
 
 .feature-card__list li::before {
   content: '→';
-  flex-shrink: 0;
-  font-weight: var(--weight-bold);
+  color: var(--color-text-tertiary);
+  font-family: var(--font-mono);
 }
 
-.feature-card--easier .feature-card__list li::before { color: var(--color-gold); }
-.feature-card--faster .feature-card__list li::before { color: var(--color-blue-light); }
-.feature-card--simplifaied .feature-card__list li::before { color: var(--color-purple); }
-
 @media (max-width: 1024px) {
-  .features__grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+  .features__grid { grid-template-columns: 1fr; }
 }
